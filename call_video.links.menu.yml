@@ -1,0 +1,5 @@
+call_video.settings:
+  title: Settings
+  parent: system.admin_config_system
+  route_name: call_video.settings
+  weight: 10

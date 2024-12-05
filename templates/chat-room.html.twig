@@ -1,0 +1,168 @@
+<section id="chatRoom" class="chat-container container fadein hidden">
+	<!-- CHAT APP -->
+	<div id="chatApp" class="chat-app">
+		<!-- CHAT PEOPLE LIST -->
+		<div id="plist" class="people-list">
+			<!-- CHAT LIST OPTIONS -->
+			<div>
+				<button id="chatShareRoomBtn">
+					<i class="fas fa-user-plus"></i>
+					Invite user</button>
+				<button id="chatHideParticipantsList" class="float-right">
+					<i class="fas fa-circle-arrow-left"></i>
+				</button>
+				<button id="participantsRaiseHandBtn" class="float-right">
+					<i class="fas fa-hand-paper"></i>
+				</button>
+				<button id="participantsUnreadMessagesBtn" class="float-right">
+					<i class="bi bi-chat-dots-fill"></i>
+				</button>
+				<button id="participantsSaveBtn" class="float-right hidden">
+					<i class="fas fa-save"></i>
+				</button>
+			</div>
+			<br/>
+
+			<!-- CHAT SEARCH -->
+			<div class="input-group mt5">
+				<span class="input-group-text">
+					<i class="fa fa-search"></i>
+				</span>
+				<input id="searchParticipantsFromList" type="text" class="form-control" placeholder="Search..." maxlength="36"/>
+			</div>
+
+			<!-- CHAT LIST -->
+			<ul id="participantsList" class="list-unstyled chat-list mt-2 mb-0"></ul>
+		</div>
+
+		<!-- CHAT -->
+		<div
+			id="chat" class="chat">
+			<!-- CHAT HEADER -->
+			<div id="chatHeader" class="chat-header clearfix">
+				<div
+					class="w-100">
+					<!-- CHAT ABOUT -->
+					<div id="chatAbout" class="text-start">
+						<img class="all-participants-img" id="chatShowParticipantsList" src="{{module_path}}/assets/images/participants.png" alt="participants"/>
+						<a data-toggle="modal" data-target="#view_info">
+							<img src="{{ module_path }}/assets/images/all.png" alt="avatar"/>
+						</a>
+						<div class="chat-about">
+							<h6 class="mb-0">Public chat</h6>
+						</div>
+					</div>
+
+					<!-- CHAT OPTIONS -->
+					<div class="chat-option-buttons">
+						<button id="chatTogglePin" class="hidden">
+							<i class="fas fa-map-pin"></i>
+						</button>
+						<button id="chatMaxButton" class="hidden">
+							<i class="fas fa-expand"></i>
+						</button>
+						<button id="chatMinButton" class="hidden">
+							<i class="fas fa-compress"></i>
+						</button>
+						<!-- CHAT MORE OPTIONS -->
+						<div class="dropdown">
+							<button class="dropdown-toggle" type="button" id="chatDropDownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="fas fa-bars"></i>
+							</button>
+							<ul class="dropdown-menu text-start" aria-labelledby="chatDropDownMenu">
+								<li>
+									<hr/>
+									<div class="title ml10">
+										<i class="fa-solid fa-eye"></i>
+										<div class="form-check form-switch form-switch-md ml10">
+											<input class="form-check-input" type="checkbox" id="showChatOnMsg" checked/>
+										</div>
+										<div id="speechMsgDiv" class="title ml10">
+											<i class="fas fa-volume-high"></i>
+											<div class="form-check form-switch form-switch-md ml10">
+												<input class="form-check-input" type="checkbox" id="speechIncomingMsg"/>
+											</div>
+										</div>
+									</div>
+									<hr/>
+								</li>
+								<li>
+									<button id="chatGhostButton" class="btn-sm">
+										<i class="fas fa-circle-half-stroke"></i>
+										Toggle bg
+									</button>
+								</li>
+								<li>
+									<button id="chatSaveButton" class="btn-sm">
+										<i class="fas fa-save"></i>
+										Save messages
+									</button>
+								</li>
+								<li>
+									<button id="chatCleanButton" class="btn-sm">
+										<i class="fas fa-trash"></i>
+										Clean messages
+									</button>
+								</li>
+							</ul>
+						</div>
+						<button id="chatCloseButton">
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- CHAT HISTORY -->
+			<div
+				id="chatHistory" class="chat-history">
+				<!-- CHAT MESSAGES -->
+				<ul id="chatGPTMessages" class="mb-0"></ul>
+				<ul id="chatPublicMessages" class="mb-0"></ul>
+				<ul id="chatPrivateMessages" class="mb-0"></ul>
+
+				<!-- CHAT EMOJI -->
+				<div id="chatEmoji" class="hidden fadein chatEmojiPicker"></div>
+			</div>
+
+			<!-- CHAT MESSAGE -->
+			<div
+				class="chat-message clearfix">
+				<!-- CHAT MESSAGE INPUT -->
+				<div class="input-group mb-0 w-100">
+					<div class="input-group mb-3">
+						<span class="input-group-text">
+							<i class="fas fa-message"></i>
+						</span>
+						<textarea id="chatMessage" class="form-control" placeholder="Enter text here..." rows="1"></textarea>
+					</div>
+				</div>
+
+				<!-- CHAT MESSAGE OPTIONS  -->
+				<div class="mt10">
+					<button id="chatEmojiButton" class="float-left mr5 hidden">
+						<i class="fas fa-smile"></i>
+					</button>
+					<button id="chatMarkdownButton" class="float-left mr5 hidden">
+						<i class="fab fa-markdown"></i>
+					</button>
+					<button id="chatSpeechStartButton" class="float-left mr5 hidden">
+						<i class="bi bi-mic-mute-fill"></i>
+					</button>
+					<button id="chatSpeechStopButton" class="float-left mr5 hidden">
+						<i class="bi bi-mic-mute-fill"></i>
+					</button>
+					<button id="chatPasteButton" class="float-left mr5 hidden">
+						<i class="fas fa-paste"></i>
+					</button>
+					<button id="chatCleanTextButton" class="float-left mr5 hidden">
+						<i class="fas fa-trash"></i>
+					</button>
+					<button id="chatSendButton" class="float-right hidden">
+						<i class="fas fa-paper-plane"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

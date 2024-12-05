@@ -1,0 +1,37 @@
+call_video.newroom:
+  path: '/call-video'
+  defaults:
+    _controller: '\Drupal\call_video\Controller\CallVideoController'
+  requirements:
+    _permission: 'access content'
+
+call_video.meeting:
+  path: '/meeting-room/{roomId}'
+  defaults:
+    _controller: '\Drupal\call_video\Controller\CallVideoController:meeting'
+  requirements:
+    _permission: 'access content'
+
+call_video.config:
+  path: '/config-call-video'
+  defaults:
+    _controller: '\Drupal\call_video\Controller\CallVideoConfigController'
+  requirements:
+    _permission: 'access content'
+
+call_video.recording:
+  path: '/api/recording-sync'
+  defaults:
+    _controller: '\Drupal\call_video\Controller\CallVideoConfigController::recording'
+    _format: 'json'
+  requirements:
+    _permission: 'access content'
+  methods: ['POST']
+  
+call_video.settings:
+  path: '/admin/config/system/settings'
+  defaults:
+    _title: 'Settings'
+    _form: 'Drupal\call_video\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

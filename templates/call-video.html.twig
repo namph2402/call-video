@@ -1,0 +1,20 @@
+{# TOAST #}
+{% include '@call_video/toast.html.twig' %}
+
+<div class="d-flex align-items-center" id="new-room">
+	<div class="container-xl d-flex align-items-center justify-content-center m-auto py-0 px-0 py-sm-5 px-sm-4">
+		<div class="new-room-info col-12 col-sm-10 col-lg-8 col-xl-7 pb-4 border-bottom">
+			<span class="new-room-title d-block mb-3 mb-md-4 lh-sm fs-1 fw-semibold">{{'The video call and meeting feature is available for everyone.'|t}}</span>
+			<div class="d-flex flex-wrap">
+				<button class="col-12 col-md-auto mb-3 mb-md-0 btn btn-primary fw-semibold" id="new-meeting"><i class="bi bi-plus-lg"></i>{{'New room'|t}} </button>
+				<div class="col-12 col-md-auto d-flex">
+					<input class="form-control flex-fill ms-md-4 me-3 py-2 py-md-3 px-2 w-auto" type="text" placeholder="{{'Enter the room id...'|t}}" id="room-value">
+					<button class="btn fw-semibold border-0 btn-outline-secondary disabled" id="join-meeting">{{'Join room'|t}}</button>
+				</div>
+			</div>
+		</div>
+		<div class="d-none d-lg-flex justify-content-center col-lg-4 col-xl-5">
+			<img class="w-auto h-auto use-select-none" src="https://lpc.erpcons.vn/themes/custom/erpcons/logo.png" alt="Logo" style="max-width: 100%">
+		</div>
+	</div>
+</div>

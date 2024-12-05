@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Call video module.
+ */
+
+function call_video_theme($existing, $type, $theme, $path) {
+    return [
+        'call_video' => [
+            'variables' => [
+                'data' => NULL,
+            ],
+            'template' => 'call-video',
+        ],
+        'meeting_room' => [
+            'variables' => [
+                'data' => NULL,
+            ],
+            'template' => 'meeting-room',
+        ],
+    ];
+}
+
+function call_video_preprocess_meeting_room(&$variables) {
+  $module_handler = \Drupal::service('extension.path.resolver');
+  $module_path = base_path() . $module_handler->getPath('module', 'call_video');
+  $variables['module_path'] = $module_path;
+}
+
+function call_video_page_attachments_alter(array &$attachments) {
+  $module_path = \Drupal::service('extension.list.module')->getPath('call_video');
+  $attachments['#attached']['drupalSettings']['callVideo'] = [
+    'modulePath' => $module_path . '/assets/',
+  ];
+}
+
+function call_video_form_call_video_settings_alter_form_alter(&$form, $form_state, $form_id) {
+  $form['actions']['submit']['#submit'][] = 'handle_exec_config';
+}
+
+function handle_exec_config($form, &$form_state) {
+  exec('cd ../mirotalksfu && npm run start', $output, $return_var);
+  \Drupal::logger('call_video')->notice('Restart server');
+}

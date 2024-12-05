@@ -1,0 +1,22 @@
+call_video.settings:
+  type: config_object
+  label: 'My Module Settings'
+  mapping:
+    url_server:
+      type: string
+      label: 'URL CONNECT SERVER'
+    port_server:
+      type: string
+      label: 'PORT CONNECT SERVER'
+    api_keysecret:
+      type: string
+      label: 'KEY SECRET'
+    recording_endpoint:
+      type: string
+      label: 'URL URL RECORDING'
+    rediect_url:
+      type: string
+      label: 'REDIECT URL'
+    url_video:
+      type: string
+      label: 'URL SAVE VIDEO'
